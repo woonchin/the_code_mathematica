@@ -1,0 +1,352 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10849,        343]
+NotebookOptionsPosition[     10462,        325]
+NotebookOutlinePosition[     10835,        341]
+CellTagsIndexPosition[     10792,        338]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[CapitalEpsilon]", "[", 
+   RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{"\[ImaginaryI]", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["k", "zz"], " ", "z"}], "-", 
+       RowBox[{"w", " ", "t"}]}], ")"}]}], "]"}], " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[CapitalEpsilon]", "1"], "[", "x", "]"}], ",", 
+     RowBox[{
+      SubscriptBox["\[CapitalEpsilon]", "2"], "[", "x", "]"}], ",", 
+     RowBox[{
+      SubscriptBox["\[CapitalEpsilon]", "3"], "[", "x", "]"}]}], 
+    "}"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"H", "[", 
+   RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{"\[ImaginaryI]", "  ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["k", "zz"], " ", "z"}], "-", 
+       RowBox[{"w", " ", "t"}]}], ")"}]}], "]"}], " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["H", "1"], "[", "x", "]"}], ",", 
+     RowBox[{
+      SubscriptBox["H", "2"], "[", "x", "]"}], ",", 
+     RowBox[{
+      SubscriptBox["H", "3"], "[", "x", "]"}]}], 
+    "}"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[Eta]", ":=", 
+  RowBox[{
+   RowBox[{"-", "\[ImaginaryI]"}], " ", "\[Gamma]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\[Xi]", ":=", 
+  RowBox[{"\[ImaginaryI]", " ", "\[Gamma]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DD", "[", 
+   RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"\[Epsilon]", " ", 
+    RowBox[{"\[CapitalEpsilon]", "[", 
+     RowBox[{"x", ",", "t"}], "]"}]}], " ", "+", " ", 
+   RowBox[{"\[Xi]", " ", 
+    RowBox[{"H", "[", 
+     RowBox[{"x", ",", "t"}], "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "[", 
+   RowBox[{"x_", ",", "t_"}], "]"}], ":=", " ", 
+  RowBox[{
+   RowBox[{"\[Mu]", " ", 
+    RowBox[{"H", "[", 
+     RowBox[{"x", ",", "t"}], "]"}]}], " ", "+", " ", 
+   RowBox[{"\[Eta]", " ", 
+    RowBox[{"\[CapitalEpsilon]", "[", 
+     RowBox[{"x", ",", "t"}], "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sys1", "=", 
+   RowBox[{"Curl", "[", 
+    RowBox[{
+     RowBox[{"\[CapitalEpsilon]", "[", 
+      RowBox[{"x", ",", "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sys2", "=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", "t"], 
+      RowBox[{"B", "[", 
+       RowBox[{"x", ",", "t"}], "]"}]}]}], "//", "Simplify"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sys3", "=", 
+   RowBox[{"Curl", "[", 
+    RowBox[{
+     RowBox[{"H", "[", 
+      RowBox[{"x", ",", "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sys4", "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[PartialD]", "t"], 
+     RowBox[{"DD", "[", 
+      RowBox[{"x", ",", "t"}], "]"}]}], "//", "Simplify"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"divideterm", ":=", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "t", " ", "w"}], "+", 
+     RowBox[{"\[ImaginaryI]", " ", "z", " ", 
+      SubscriptBox["k", "zz"]}]}]]}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"owing", " ", "we", " ", "confront", " ", "nonzero", " ", "term"}],
+    "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sys1", ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"sys1", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "-", 
+        RowBox[{"sys2", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "/", "divideterm"}], 
+     "\[Equal]", "0"}], "//", "Simplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sys2", ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"sys1", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "-", 
+        RowBox[{"sys2", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "/", "divideterm"}], 
+     "\[Equal]", "0"}], "//", "Simplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sys3", ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"sys1", "[", 
+         RowBox[{"[", "3", "]"}], "]"}], "-", 
+        RowBox[{"sys2", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}], ")"}], "/", "divideterm"}], 
+     "\[Equal]", "0"}], "//", "Simplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sys4", ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"sys3", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "-", 
+        RowBox[{"sys4", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "/", "divideterm"}], 
+     "\[Equal]", "0"}], "//", "Simplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sys5", ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"sys3", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "-", 
+        RowBox[{"sys4", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "/", "divideterm"}], 
+     "\[Equal]", "0"}], "//", "Simplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sys6", ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"sys3", "[", 
+         RowBox[{"[", "3", "]"}], "]"}], "-", 
+        RowBox[{"sys4", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}], ")"}], "/", "divideterm"}], 
+     "\[Equal]", "0"}], "//", "Simplify"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"Sys1", "&&", "Sys4"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[CapitalEpsilon]", "1"], "[", "x", "]"}], ",", 
+        RowBox[{
+         SubscriptBox["H", "1"], "[", "x", "]"}]}], "}"}]}], "]"}], "//", 
+    "Simplify"}], ";", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{"Sys3", "&&", "Sys6"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[CapitalEpsilon]", "3"], "[", "x", "]"}], ",", 
+        RowBox[{
+         SubscriptBox["H", "3"], "[", "x", "]"}]}], "}"}]}], "]"}], "//", 
+    "Simplify"}], ";", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[CapitalEpsilon]", "1"], "[", "x", "]"}], "/.", 
+        RowBox[{
+         RowBox[{"Solve", "[", 
+          RowBox[{
+           RowBox[{"Sys1", "&&", "Sys4"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["\[CapitalEpsilon]", "1"], "[", "x", "]"}], ",", 
+             RowBox[{
+              SubscriptBox["H", "1"], "[", "x", "]"}]}], "}"}]}], "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", "1"}], "]"}], "]"}]}], "//", 
+       RowBox[{"Simplify", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["H", "1"], "[", "x", "]"}], "/.", 
+         RowBox[{
+          RowBox[{"Solve", "[", 
+           RowBox[{
+            RowBox[{"Sys1", "&&", "Sys4"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               SubscriptBox["\[CapitalEpsilon]", "1"], "[", "x", "]"}], ",", 
+              RowBox[{
+               SubscriptBox["H", "1"], "[", "x", "]"}]}], "}"}]}], "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "2"}], "]"}], "]"}]}]}]}], "//", 
+      RowBox[{"Simplify", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[CapitalEpsilon]", "3"], "[", "x", "]"}], "/.", 
+        RowBox[{
+         RowBox[{"Solve", "[", 
+          RowBox[{
+           RowBox[{"Sys3", "&&", "Sys6"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              SubscriptBox["\[CapitalEpsilon]", "3"], "[", "x", "]"}], ",", 
+             RowBox[{
+              SubscriptBox["H", "3"], "[", "x", "]"}]}], "}"}]}], "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", "1"}], "]"}], "]"}]}]}]}], "//", 
+     RowBox[{"Simplify", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["H", "3"], "[", "x", "]"}], "/.", 
+       RowBox[{
+        RowBox[{"Solve", "[", 
+         RowBox[{
+          RowBox[{"Sys3", "&&", "Sys6"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             SubscriptBox["\[CapitalEpsilon]", "3"], "[", "x", "]"}], ",", 
+            RowBox[{
+             SubscriptBox["H", "3"], "[", "x", "]"}]}], "}"}]}], "]"}], "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "2"}], "]"}], "]"}]}]}]}], "//", "Simplify", 
+    "\[IndentingNewLine]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.6159535398313255`*^9, 3.6159535420938263`*^9}, {
+  3.615953572830241*^9, 3.6159537071644793`*^9}, {3.615953742238784*^9, 
+  3.6159541899229546`*^9}, {3.6159543836466246`*^9, 3.6159543936572747`*^9}, {
+  3.6159545462646494`*^9, 3.615954553692586*^9}},
+ EmphasizeSyntaxErrors->True],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Syntax", "::", "tsntxi"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\\\"\[NoBreak]\\!\\((*\\(\\(\[LeftSkeleton] 1 \
+\[RightSkeleton]\\)\\)\\)\[NoBreak]\\\" is incomplete; more input is needed.\
+\[NoBreak]\\!\\(\\\"\\\"\\)\[NoBreak]\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.615954556944745*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Syntax", "::", "sntxi"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Incomplete expression; more input is needed \
+\[NoBreak]\\!\\(\\\"\\\"\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6159545569937763`*^9}]
+}, Open  ]]
+},
+WindowSize->{1264, 623},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 9231, 281, 743, "Input"],
+Cell[9813, 305, 354, 8, 34, "Message"],
+Cell[10170, 315, 276, 7, 34, "Message"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

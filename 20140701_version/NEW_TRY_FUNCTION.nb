@@ -1,0 +1,117 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      2741,        107]
+NotebookOptionsPosition[      2484,         94]
+NotebookOutlinePosition[      2830,        109]
+CellTagsIndexPosition[      2787,        106]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Ex1", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"a1", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}], "+", 
+     RowBox[{"a2", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}]}]}], ";"}],
+  FontSize->8], "\n", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Ey1", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"a3", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}], "+", 
+     RowBox[{"a4", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}]}]}], ";"}],
+  FontSize->8], "\n", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Ez1", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"a5", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}], "+", 
+     RowBox[{"a6", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}]}]}], ";"}],
+  FontSize->8], "\n", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Hx1", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"a7", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}], "+", 
+     RowBox[{"a8", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}]}]}], ";"}],
+  FontSize->8], "\n", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Hy1", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"a9", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}], "+", 
+     RowBox[{"a10", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}]}]}], ";"}],
+  FontSize->8], "\n", 
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"Hz1", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"a11", "*", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}], "+", 
+     RowBox[{"a12", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"k1", "*", "x"}], "]"}]}]}]}], ";"}],
+  FontSize->8]}], "Input"]
+},
+WindowSize->{601, 750},
+WindowMargins->{{615, Automatic}, {Automatic, 43}},
+FrontEndVersion->"7.0 for Microsoft Windows (64-bit) (February 18, 2009)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 1935, 72, 132, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
